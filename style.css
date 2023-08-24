@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background: #f8efef;
+}
+.popup {
+    position: absolute;
+    left: 50%;
+    /* top: 0; */
+
+    top: -25%;
+    visibility: hidden;
+    /* added above */
+
+    transform: translateX(-50%);
+    width: 490px;
+    border-radius: 5px;
+    padding: 13px 17px 20px;
+    background: #bdbcbc;
+    display: flex;
+    border-top: 3px solid #ea4d67;
+    box-shadow: 0 10px 25px rgba(52, 87, 220, 0.07);
+    transition: all 0.25s ease;
+}
+/* added next */
+.popup.show {
+    top: 0;
+    visibility: visible;
+}
+.popup.online {
+    border-color: #03c724;
+}
+.popup .icon i {
+    width: 40px;
+    height: 40px;
+    background: #ea4d67;
+    border-radius: 50%;
+    display: flex;
+    color: #f8efef;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+}
+.popup.online .icon i {
+    background: #03c724;
+}
+.popup .title {
+    font-size: 1.2rem;
+}
+.popup .desc {
+    font-size: 1.04rem;
+    color: rgb(63, 62, 63);
+    margin: 3px 0 10px;
+}
+.popup .reconnect {
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #7848f3;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 9px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.popup.online .reconnect {
+    background: #bdbcbc;
+    pointer-events: none;
+}
+@media screen and (max-width: 550px){
+    .popup {
+        width: 100%;
+        padding: 10px 15px 17px;
+    }
+}
+
